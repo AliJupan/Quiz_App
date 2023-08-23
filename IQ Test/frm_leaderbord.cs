@@ -27,10 +27,10 @@ namespace IQ_Test
                 connection.Open();
                 string selectQuery = "SELECT TOP 10 Name, Points FROM Leaderboard ORDER BY Points DESC";
                 SqlDataAdapter adapter = new SqlDataAdapter(selectQuery, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
+                DataTable DataTable = new DataTable();
+                adapter.Fill(DataTable);
 
-                dataGridView1.DataSource = dataTable;
+                dataGridView1.DataSource = DataTable;
             }
         }
     }
