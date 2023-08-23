@@ -19,6 +19,7 @@ namespace IQ_Test
     {
         public Question question = new Question();
         public int question_no = 0;
+        public int total_question = 15;
         public string username;
         private const string ConnectionString = "Data Source=DESKTOP-0SV48E5;Initial Catalog=IQ_Test;Integrated Security=True";
         private int correctAnswerIndex = -1;
@@ -148,9 +149,12 @@ namespace IQ_Test
 
         private void RestartQuiz()
         {
-            User.ResetScore();
-            question_no = 0;
-            NextQuestion();
+            if(question_no == total_question)
+            {
+                User.ResetScore();
+                question_no = 0;
+                NextQuestion();
+            }
         }
 
         private async void NextQuestion()
@@ -166,7 +170,7 @@ namespace IQ_Test
                 btnquestion.Text = "Next Question";
                 Button();
             }
-            if (question_no != 10)
+            if (question_no != total_question)
             {
                 string apiUrl = "https://opentdb.com/api.php?amount=1&category=18&difficulty=medium&type=multiple";
                 await question.FetchQuestionFromApi(apiUrl);
@@ -180,7 +184,7 @@ namespace IQ_Test
                                      btnanswer3.Text == question.CorrectAnswer ? 1 :
                                      btnanswer4.Text == question.CorrectAnswer ? 2 : 3;
             }
-            if (question_no == 10)
+            if (question_no == total_question)
             {
                 btnquestion.Enabled = false;
             }
