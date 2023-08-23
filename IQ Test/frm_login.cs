@@ -35,9 +35,9 @@ namespace IQ_Test
 
         private void btnenter_Validating(object sender, CancelEventArgs e)
         {
-            if(txtusername.Text.Length <= 3)
+            if(txtusername.Text.Length <= 2)
             {         
-                errorProvider1.SetError(txtusername, "User Name should be more than 3 characters");
+                errorProvider1.SetError(txtusername, "User Name should be at least 3 characters");
                 e.Cancel = true; 
             }
             else if (IsUsernameTaken(txtusername.Text.ToString())) 
