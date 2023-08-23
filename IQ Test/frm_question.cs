@@ -49,6 +49,7 @@ namespace IQ_Test
 
         private void button7_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Your score has been added to leaderboard", "LeaderBoard", MessageBoxButtons.OK, MessageBoxIcon.Information);
             InsertUserIntoLeaderboard(User.Name, User.Points);
         }
 
@@ -59,7 +60,7 @@ namespace IQ_Test
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show(User.Points.ToString());
+            MessageBox.Show("User "+User.Name+" has "+User.Points.ToString(),"User Points",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void AnswerButton_Click(object sender, EventArgs e)
@@ -75,7 +76,7 @@ namespace IQ_Test
             else
             {
                 clickedButton.BackColor = Color.Red;
-                User.DecreaseScore(2);
+                User.DecreaseScore(1);
                 TurnCorrectAnswerGreen();
                 TurnIncorrectButtonsRed(correctAnswerIndex);
             }
