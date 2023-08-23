@@ -8,8 +8,7 @@ namespace IQ_Test
 {
     public class User
     {
-        public int Id { get; set; }
-        public string Name { get; set; }   
+        public string Name { get; set; }
         public int Points { get; set; }
 
         public User(string name)
@@ -17,9 +16,19 @@ namespace IQ_Test
             Name = name;
         }
 
-        public override string ToString()
+        public void IncreaseScore(int points)
         {
-            return string.Format("{0} - {1}",Name,Points);
+            Points += points;
+        }
+
+        public void DecreaseScore(int points)
+        {
+            Points -= points;
+        }
+
+        public void ResetScore()
+        {
+            Points = 0;
         }
     }
 }

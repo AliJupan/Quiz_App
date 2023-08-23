@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace IQ_Test
 {
-    public partial class frmleaderbord : Form
+    public partial class frm_leaderbord : Form
     {
         private const string ConnectionString = "Data Source=DESKTOP-0SV48E5;Initial Catalog=IQ_Test;Integrated Security=True";
-        public frmleaderbord()
+        public frm_leaderbord()
         {
             InitializeComponent();
             LoadTopPlayers();
