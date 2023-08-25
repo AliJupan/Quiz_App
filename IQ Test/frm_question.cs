@@ -28,6 +28,7 @@ namespace IQ_Test
         public frm_question()
         {
             InitializeComponent();
+            btnretry.Enabled = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -165,6 +166,7 @@ namespace IQ_Test
                 btnquestion.Text = "Get Question";
                 Button();
                 btnquestion.Enabled = true;
+                btnretry.Enabled = false;
             }
             if (question_no != 0)
             {
@@ -188,6 +190,7 @@ namespace IQ_Test
             if (question_no == total_question)
             {
                 btnquestion.Enabled = false;
+                btnretry.Enabled = true;
             }
         }
         private void Button()
